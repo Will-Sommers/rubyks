@@ -11,7 +11,7 @@ class Cube
   def clean_hist
     i = 0
     until i == @hist.length
-      if @hist[i] == @hist[i+1] && @hist[i] == @hist[i+2] && @hist[i] == @hist[i+3] 
+      if @hist.values_at(i..(i + 3)).uniq.length == 1
         4.times {@hist.delete_at(i)}
         i = -1
       end
